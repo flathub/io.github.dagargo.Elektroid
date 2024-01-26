@@ -31,8 +31,8 @@ modules:
       - install -t /app/bin/ elektroid.sh
     sources:
       - type: archive
-        url: https://github.com/dagargo/elektroid/releases/download/3.0/elektroid-3.0.tar.gz
-        sha256: 877265bd0e9f7eb8bd36ea3413f60d3731cffbdbf1caac70453ca89eada40766
+        url: https://github.com/dagargo/elektroid/releases/download/3.0.1/elektroid-3.0.1.tar.gz
+        sha256: 0bdb9becae4b51499427a012d90b47cceaaff75ca59b66c63e31a1acc8e35823
       - type: script
         dest-filename: elektroid.sh
         commands:
