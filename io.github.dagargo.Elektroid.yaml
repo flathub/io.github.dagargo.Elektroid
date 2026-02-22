@@ -1,6 +1,6 @@
 id: io.github.dagargo.Elektroid
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 command: elektroid.sh
 finish-args:
@@ -17,10 +17,16 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://libzip.org/download/libzip-1.9.2.tar.gz
-        sha256: fd6a7f745de3d69cf5603edc9cb33d2890f0198e415255d0987a0cf10d824c6f
+        url: https://libzip.org/download/libzip-1.11.4.tar.gz
+        sha256: 82e9f2f2421f9d7c2466bbc3173cd09595a88ea37db0d559a9d0a2dc60dc722e
     # Disable installation of libzip tools in /app/bin:
-    config-opts: ['-DBUILD_TOOLS=OFF']
+    config-opts: ["-DBUILD_TOOLS=OFF"]
+  - name: rubberband
+    buildsystem: meson
+    sources:
+      - type: archive
+        url: https://github.com/breakfastquay/rubberband/archive/refs/tags/v3.3.0.tar.gz
+        sha256: 2bb837fe00932442ca90e185af8a468f7591df0c002b4a9e27a1bced1563ac84
   - name: elektroid
     buildsystem: autotools
     no-autogen: true
@@ -28,8 +34,8 @@ modules:
       - install -t /app/bin/ elektroid.sh
     sources:
       - type: archive
-        url: https://github.com/dagargo/elektroid/releases/download/3.2.3/elektroid-3.2.3.tar.gz
-        sha256: 815f43092f29972cfebae7feab4eb5a7c136adff28efcf329418707a78691992
+        url: https://github.com/dagargo/elektroid/releases/download/3.3/elektroid-3.3.tar.gz
+        sha256: e8474314ce9ad5fb934f381904232d3fbaeffed925a89235879561549147df12
       - type: script
         dest-filename: elektroid.sh
         commands:
