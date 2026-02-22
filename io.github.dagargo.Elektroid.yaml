@@ -3,15 +3,22 @@ runtime: org.freedesktop.Platform
 runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 command: elektroid.sh
-finish-args:
-  - "--share=ipc"
-  - "--socket=fallback-x11"
-  - "--socket=wayland"
-  - "--socket=pulseaudio"
-  - "--filesystem=home"
-  - "--device=all"
 copy-icon: true
 separate-locales: false
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --filesystem=home
+  - --device=all
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+  - /share/man
+  - '*.la'
+  - '*.a'
 modules:
   - name: libzip
     buildsystem: cmake-ninja
